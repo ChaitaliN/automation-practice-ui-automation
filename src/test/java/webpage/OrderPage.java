@@ -35,7 +35,7 @@ public class OrderPage extends SignInPage {
     @FindBy(xpath = "//a[@class='button btn btn-default standard-checkout button-medium']")
     WebElement goToAddress;
 
-    @FindBy(xpath = "//ul[@id='address_delivery']//li[@class='address_country_name'][contains(text(),'United States')]")
+    @FindBy(xpath = "//ul[@id='address_delivery']//li[contains(text(),'United States')]")
     WebElement verifyAddress;
 
     @FindBy(xpath = "//button[@name='processAddress']")
