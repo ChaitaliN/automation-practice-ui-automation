@@ -34,7 +34,7 @@ public class Order {
     public void i_am_on_home_page_to_place_a_order() throws Throwable {
         this.initialize();
         driver.navigateToHomePage();
-        orderPage.clickLogo();
+        orderPage.homePage();
     }
 
     @Given("^I add \"([^\"]*)\" to cart$")
@@ -44,7 +44,7 @@ public class Order {
 
     @Given("^I check if summary has \"([^\"]*)\" items$")
     public void i_check_if_summary_has_items(String items) throws Throwable {
-        assertEquals(Integer.valueOf(items), orderPage.validateItemsInsummary());
+        assertEquals(Integer.valueOf(items), orderPage.validateItemsInSummary());
     }
 
     @Given("^I verify \"([^\"]*)\" in address details$")

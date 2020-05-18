@@ -59,7 +59,7 @@ public class OrderPage extends SignInPage {
     @FindBy(xpath = "//strong[contains(text(),'Your order on My Store is complete.')]")
     WebElement confirmPlacedOrder;
 
-    public void clickLogo() throws Throwable {
+    public void homePage() throws Throwable {
         this.login(email, password);
         logo.click();
     }
@@ -97,7 +97,7 @@ public class OrderPage extends SignInPage {
         }
     }
 
-    public Integer validateItemsInsummary() throws Throwable {
+    public Integer validateItemsInSummary() throws Throwable {
         List<WebElement> rows = driver.findElements(By.xpath("//table[@id='cart_summary']//tbody//tr"));
         return rows.size();
     }
