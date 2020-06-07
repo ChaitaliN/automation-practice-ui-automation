@@ -1,5 +1,6 @@
 package driver;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -29,12 +30,13 @@ public class Driver {
     }
 
     public void start() {
-        if (this.prop.getProperty("browser").toLowerCase().equals(chromeBrowser)) {
-            System.setProperty("webdriver.chrome.driver", this.prop.getProperty("chromedriver.location"));
+       if (this.prop.getProperty("browser").toLowerCase().equals(chromeBrowser)) {
+            WebDriverManager.chromedriver().setup();
+
             driver = new ChromeDriver();
         } else {
-            System.setProperty("webdriver.gecko.driver", this.prop.getProperty("firefoxdriver.location"));
-            driver = new FirefoxDriver();
+           WebDriverManager.firefoxdriver().setup();
+           driver = new FirefoxDriver();
         }
     }
 
