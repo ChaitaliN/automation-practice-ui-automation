@@ -1,8 +1,9 @@
 package driver;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.FileNotFoundException;
@@ -15,8 +16,8 @@ public class Driver {
     final private String propFileName = "test.config.properties";
     private String chromeBrowser = "chrome";
     private Properties prop;
-    public static WebDriver driver;
-    protected static WebDriverWait wait;
+    public  static WebDriver driver;
+    public  static WebDriverWait wait;
 
     public Driver() {
 
@@ -29,12 +30,15 @@ public class Driver {
     }
 
     public void start() {
+        System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY,"true");
         if (this.prop.getProperty("browser").toLowerCase().equals(chromeBrowser)) {
-            System.setProperty("webdriver.chrome.driver", this.prop.getProperty("chromedriver.location"));
+//            System.setProperty("webdriver.chrome.driver", this.prop.getProperty("chromedriver.location"));
+           // using WebDriverManager instead binary files
+            WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
         } else {
-            System.setProperty("webdriver.gecko.driver", this.prop.getProperty("firefoxdriver.location"));
-            driver = new FirefoxDriver();
+//            System.setProperty("webdriver.gecko.driver", this.prop.getProperty("firefoxdriver.location"));
+//            driver = new FirefoxDriver();
         }
     }
 

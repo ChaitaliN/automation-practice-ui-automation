@@ -1,11 +1,11 @@
 package stepDefinition;
 
-import cucumber.api.java.After;
-import cucumber.api.java.Before;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
 import driver.Driver;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import webpage.SignInPage;
 
 import static org.junit.Assert.assertEquals;
@@ -17,12 +17,14 @@ public class SignIn {
 
     @Before()
     public void setup() {
+        System.out.println("before hook of signInPage");
         driver = new Driver();
     }
 
     @After()
     public void teardown() throws Exception {
-        driver.quit();
+        System.out.println("after hook of signInPage");
+         //driver.quit();
     }
 
     public void initialize() throws Throwable {
