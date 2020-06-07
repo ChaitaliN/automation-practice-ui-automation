@@ -23,7 +23,8 @@ public class OrderPage extends SignInPage {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = "//div[@id='header_logo']//a")
+    @FindBy(xpath ="//div[@id='header_logo']//a")
+            // "//div[@id='header_logo']//a"
     WebElement logo;
 
     @FindBy(xpath = "//span[@class='continue btn btn-default button exclusive-medium']")

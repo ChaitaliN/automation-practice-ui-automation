@@ -1,19 +1,28 @@
 package stepDefinition;
 
-import cucumber.api.java.After;
-import cucumber.api.java.Before;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+import Utility.Screenshot;
 import driver.Driver;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import webpage.OrderPage;
 
 import static org.junit.Assert.assertEquals;
+
+//import cucumber.api.Scenario;
+//import cucumber.api.java.After;
+//import cucumber.api.java.en.Given;
+//import cucumber.api.java.en.Then;
+//import cucumber.api.java.en.When;
 
 public class Order {
 
     public Driver driver;
     public OrderPage orderPage;
+    public Screenshot sc;
 
     @Before()
     public void setup() {
@@ -21,8 +30,14 @@ public class Order {
     }
 
     @After()
-    public void teardown() throws Exception {
+    public void teardown(Scenario scenario) throws Exception {
+       if(scenario.isFailed()){
+            sc = new Screenshot();
+            sc.takeScreenshot(scenario);
+
+      }
         driver.quit();
+
     }
 
     public void initialize() throws Throwable {
