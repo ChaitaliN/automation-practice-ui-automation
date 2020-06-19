@@ -45,7 +45,6 @@
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-picocontainer</artifactId>
             <version>6.0.0-RC2</version>
-            <scope>test</scope>
         </dependency>
 
         <dependency>
