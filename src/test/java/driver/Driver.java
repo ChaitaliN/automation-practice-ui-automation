@@ -13,6 +13,8 @@ import java.util.concurrent.TimeUnit;
 
 public class Driver {
 
+
+
     final private String propFileName = "test.config.properties";
     private String chromeBrowser = "chrome";
     private Properties prop;

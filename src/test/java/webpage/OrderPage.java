@@ -13,6 +13,8 @@ import java.util.List;
 
 public class OrderPage extends SignInPage {
 
+
+
     public static WebDriver driver;
     private String email = "peter@gmail.com";
     private String password = "test@123";
@@ -21,6 +23,7 @@ public class OrderPage extends SignInPage {
         super(drv);
         driver = drv;
         PageFactory.initElements(driver, this);
+
     }
 
     @FindBy(xpath = "//div[@id='header_logo']//a")
