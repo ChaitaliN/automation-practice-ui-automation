@@ -1,11 +1,11 @@
 package stepDefinition;
 
+import driver.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import driver.Driver;
 import webpage.OrderPage;
 
 import static org.junit.Assert.assertEquals;
