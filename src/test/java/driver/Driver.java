@@ -32,7 +32,6 @@ public class Driver {
     public void start() {
         if (this.prop.getProperty("browser").toLowerCase().equals(chromeBrowser)) {
             WebDriverManager.chromedriver().setup();
-
             driver = new ChromeDriver();
         } else {
             WebDriverManager.firefoxdriver().setup();
