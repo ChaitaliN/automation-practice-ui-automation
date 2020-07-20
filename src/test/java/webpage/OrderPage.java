@@ -14,7 +14,6 @@ import java.util.List;
 public class OrderPage extends SignInPage {
 
 
-
     public static WebDriver driver;
     private String email = "peter@gmail.com";
     private String password = "test@123";
@@ -120,7 +119,7 @@ public class OrderPage extends SignInPage {
         bankPayment.click();
         return verifyBankPayment.getText();
     }
-
+    
     public void confirmOrder() throws Throwable {
         submitOrder.click();
     }
