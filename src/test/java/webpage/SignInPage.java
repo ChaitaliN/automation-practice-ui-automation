@@ -61,4 +61,5 @@ public class SignInPage implements Authentication {
         this.enterPassword(password);
         this.submit();
     }
+
 }

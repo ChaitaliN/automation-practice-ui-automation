@@ -8,7 +8,6 @@ AutomationPractice.com UI automation testing
 - Maven 3.6
 - Chrome 80
 - Firefox 73
-- NOTE: [Chrome / Firefox drivers are bundled as part of framework](./bin)
 
 ## Framework
 
@@ -21,17 +20,9 @@ AutomationPractice.com UI automation testing
 - BDD tool - Cucumber
 - Test tool - JUnit
 - Build tool - Maven
-- Configuration management - [Properties file to change browser, driver location etc](./src/test/resources/test.config.properties)
+- Configuration management - [Properties file to change browser, host etc](./src/test/resources/test.config.properties)
 
 ## Usage
-
-- **NOTE:** [Change browser driver location in properties file based on your operating system.](./src/test/resources/test.config.properties)
-
-  ```sh
-  MacOS (default) - ./bin/darwin/chromedriver
-  Windows - ./bin/windows/chromedriver
-  Linux - ./bin/linux/chromedriver
-  ```
 
 - Run all scenarios
 
