@@ -8,7 +8,6 @@
     <artifactId>automation-practice-ui-automation</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-
     <dependencies>
 
         <!-- http://www.seleniumhq.org/download/maven.jsp -->
@@ -52,13 +51,14 @@
             <artifactId>webdrivermanager</artifactId>
             <version>4.0.0</version>
         </dependency>
-        <!--        Added this dependency to remove SL4J warning occure due to WebDriverManager API-->
+      
+        <!-- Added this dependency to remove SL4J warning occure due to WebDriverManager API -->
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
             <version>1.2.3</version>
         </dependency>
-        <!--            extent report-->
+        <!-- extent report-->
         <dependency>
             <groupId>tech.grasshopper</groupId>
             <artifactId>extentreports-cucumber5-adapter</artifactId>
@@ -67,6 +67,7 @@
         </dependency>
 
     </dependencies>
+
     <build>
         <plugins>
             <plugin>
@@ -97,7 +98,8 @@
                         <configuration>
                             <projectName>automation-practice-ui-automation</projectName>
                             <outputDirectory>${project.build.directory}/site/cucumber-reports</outputDirectory>
-                            <!--                            <cucumberOutput>${project.build.directory}/cucumber.json</cucumberOutput>-->
+
+                            <!-- <cucumberOutput>${project.build.directory}/cucumber.json</cucumberOutput> -->
                             <!-- <skippedFails>true</skippedFails> -->
                             <!-- <enableFlashCharts>false</enableFlashCharts> -->
                             <!-- <buildNumber>42</buildNumber> -->
@@ -107,6 +109,5 @@
             </plugin>
         </plugins>
     </build>
-
 
 </project>
