@@ -11,19 +11,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
-public class OrderPage extends SignInPage {
+public class OrderPage {
 
+    private WebDriver driver;
 
-
-    public static WebDriver driver;
-    private String email = "peter@gmail.com";
-    private String password = "test@123";
-
-    public OrderPage(WebDriver drv) {
-        super(drv);
-        driver = drv;
+    public OrderPage(WebDriver driver) {
+        this.driver = driver;
         PageFactory.initElements(driver, this);
-
     }
 
     @FindBy(xpath = "//div[@id='header_logo']//a")
@@ -63,7 +57,6 @@ public class OrderPage extends SignInPage {
     WebElement confirmPlacedOrder;
 
     public void homePage() throws Throwable {
-        this.login(email, password);
         logo.click();
     }
 
