@@ -40,6 +40,12 @@ AutomationPractice.com UI automation testing
 
 ## Reports
 
+- Extent report
+
+  ```sh
+  target/cucumber-reports/advanced-reports/extent-reports/extent.html
+  ```
+
 - HTML report
 
   ```sh
