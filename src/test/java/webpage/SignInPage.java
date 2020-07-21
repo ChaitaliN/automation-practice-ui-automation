@@ -7,10 +7,10 @@ import org.openqa.selenium.support.PageFactory;
 
 public class SignInPage implements Authentication {
 
-    public static WebDriver driver;
+    private WebDriver driver;
 
-    public SignInPage(WebDriver drv) {
-        driver = drv;
+    public SignInPage(WebDriver driver) {
+        this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
@@ -61,5 +61,4 @@ public class SignInPage implements Authentication {
         this.enterPassword(password);
         this.submit();
     }
-
 }
