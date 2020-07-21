@@ -1,39 +1,36 @@
 package stepDefinition;
 
+import context.Context;
 import io.cucumber.java.After;
-import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import driver.Driver;
 import webpage.SignInPage;
 
 import static org.junit.Assert.assertEquals;
 
 public class SignIn {
 
-    public Driver driver;
+    public Context context;
     public SignInPage signinPage;
 
-    @Before()
-    public void setup() {
-        driver = new Driver();
+    public SignIn(Context context) {
+        this.context = context;
     }
 
     @After()
     public void teardown() throws Exception {
-        driver.quit();
+        context.quitDriver();
     }
 
     public void initialize() throws Throwable {
-        driver.start();
-        signinPage = new SignInPage(driver.get());
+        signinPage = new SignInPage(context.getDriver());
     }
 
     @Given("^I am on home page$")
     public void i_am_on_home_page() throws Throwable {
         this.initialize();
-        driver.navigateToHomePage();
+        this.context.openBrowser();
     }
 
     @Given("^I click on Signin$")
@@ -64,5 +61,6 @@ public class SignIn {
     @Then("^I should see \"([^\"]*)\" in browser title$")
     public void i_should_see_in_browser_title(String title) throws Throwable {
         assertEquals(title, signinPage.getTitle());
+        // assertEquals("fake", signinPage.getTitle());
     }
 }

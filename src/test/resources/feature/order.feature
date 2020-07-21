@@ -1,6 +1,15 @@
 @place-order
 Feature: Place a order
 
+	Background: User login
+
+		Given I am on home page
+		And I click on Signin
+		And I see Signin form displayed
+		When I enter username "peter@gmail.com"
+		And I enter password "test@123"
+		And I click on Signin button
+
     @place-order-positive
 	Scenario Outline: Place order with positive test case
 

@@ -1,39 +1,35 @@
 package stepDefinition;
 
-import driver.Driver;
+import context.ContextManager;
 import io.cucumber.java.After;
-import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.cucumber.java.en.Then;
 import webpage.OrderPage;
 
 import static org.junit.Assert.assertEquals;
 
 public class Order {
 
-    public Driver driver;
+    public ContextManager context;
     public OrderPage orderPage;
 
-    @Before()
-    public void setup() {
-        driver = new Driver();
+    public Order(ContextManager context) {
+        this.context = context;
     }
 
     @After()
     public void teardown() throws Exception {
-        driver.quit();
+        context.quitDriver();
     }
 
     public void initialize() throws Throwable {
-        driver.start();
-        orderPage = new OrderPage(driver.get());
+        orderPage = new OrderPage(context.getDriver());
     }
 
     @Given("^I am on home page to place a order$")
     public void i_am_on_home_page_to_place_a_order() throws Throwable {
         this.initialize();
-        driver.navigateToHomePage();
         orderPage.homePage();
     }
 
