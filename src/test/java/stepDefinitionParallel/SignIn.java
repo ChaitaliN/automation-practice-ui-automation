@@ -1,4 +1,4 @@
-package stepDefinition;
+package stepDefinitionParallel;
 
 import context.Context;
 import io.cucumber.java.After;
@@ -8,6 +8,7 @@ import io.cucumber.java.en.When;
 import webpage.SignInPage;
 
 import static org.junit.Assert.assertEquals;
+
 
 public class SignIn {
 
@@ -63,4 +64,5 @@ public class SignIn {
         assertEquals(title, signinPage.getTitle());
         // assertEquals("fake", signinPage.getTitle());
     }
+
 }

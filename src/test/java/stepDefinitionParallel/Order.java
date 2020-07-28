@@ -1,10 +1,10 @@
-package stepDefinition;
+package stepDefinitionParallel;
 
 import context.ContextManager;
 import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import webpage.OrderPage;
 
 import static org.junit.Assert.assertEquals;

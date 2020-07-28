@@ -23,10 +23,10 @@ public class OrderPage {
     @FindBy(xpath = "//div[@id='header_logo']//a")
     WebElement logo;
 
-    @FindBy(xpath = "//span[@class='continue btn btn-default button exclusive-medium']")
+    @FindBy(css = "span[title='Continue shopping']")
     WebElement continueShopping;
 
-    @FindBy(xpath = "//a[@class='btn btn-default button button-medium']")
+    @FindBy(css = "a[title='Proceed to checkout']")
     WebElement goToSummary;
 
     @FindBy(xpath = "//a[@class='button btn btn-default standard-checkout button-medium']")
@@ -41,10 +41,10 @@ public class OrderPage {
     @FindBy(xpath = "//input[@id='cgv']")
     WebElement agreeTermsOfService;
 
-    @FindBy(xpath = "//button[@name='processCarrier']")
+    @FindBy(name = "processCarrier")
     WebElement goToPayment;
 
-    @FindBy(xpath = "//a[@class='bankwire']")
+    @FindBy(className = "bankwire")
     WebElement bankPayment;
 
     @FindBy(xpath = "//h3[@class='page-subheading']")
