@@ -1,6 +1,7 @@
 package context;
 
 import org.openqa.selenium.WebDriver;
+
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -18,7 +19,7 @@ public class ContextManager implements Context {
             e.printStackTrace();
         }
 
-        // Get web driver for given broser
+        // Get web driver for given browser
         driver = new BrowserDriver().get(this.prop.getProperty("browser"));
     }
 

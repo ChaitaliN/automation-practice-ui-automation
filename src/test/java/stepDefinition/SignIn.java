@@ -1,6 +1,6 @@
 package stepDefinition;
 
-import context.Context;
+import context.ContextManager;
 import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -11,10 +11,10 @@ import static org.junit.Assert.assertEquals;
 
 public class SignIn {
 
-    public Context context;
+    public ContextManager context;
     public SignInPage signinPage;
 
-    public SignIn(Context context) {
+    public SignIn(ContextManager context) {
         this.context = context;
     }
 
@@ -61,6 +61,6 @@ public class SignIn {
     @Then("^I should see \"([^\"]*)\" in browser title$")
     public void i_should_see_in_browser_title(String title) throws Throwable {
         assertEquals(title, signinPage.getTitle());
-        // assertEquals("fake", signinPage.getTitle());
+
     }
 }
