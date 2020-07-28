@@ -20,10 +20,10 @@ public class SignInPage implements Authentication {
     @FindBy(xpath = "//form[@id='login_form']")
     WebElement signinForm;
 
-    @FindBy(xpath = "//input[@id='email']")
+    @FindBy(id = "email")
     WebElement username;
 
-    @FindBy(xpath = "//input[@id='passwd']")
+    @FindBy(id = "passwd")
     WebElement password;
 
     @FindBy(xpath = "//button[@id='SubmitLogin']")
